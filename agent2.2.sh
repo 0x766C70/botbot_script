@@ -46,12 +46,7 @@ else
         --arg message "$message" \
         --arg agent_id "$AGENT_ID" \
         '{
-            inputs: [{
-                role: "user",
-                content: ("Nous sommes le \($today) et ton interlocuteur est \($speaker). Il te dit: \($message)"),
-                object: "entry",
-                type: "message.input"
-            }],
+            inputs: "Nous sommes le \($today) et ton interlocuteur est \($speaker). Il te dit: \($message)",
             stream: false,
             agent_id: $agent_id
         }')
