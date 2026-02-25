@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-MISTRAL_API_KEY="2IxSTDOqmJOzT1KbpJxV1hcoq4YXfTF4"
+MISTRAL_API_KEY="S4TZIGT1vHsjKR7ytQMwCIQwRL8Sid3O"
 CONV_ID="${4:-}"  # Utilisation de ${var:-} pour éviter les erreurs si vide
 today=$(date +"%Y-%m-%d")
 speaker="${1:-utilisateur}"  # Valeur par défaut
@@ -52,15 +52,12 @@ else
         }')
 fi
 
-echo $REQUEST_BODY
-
 # Exécution de la requête
 response=$(curl -s --location "$API_URL" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer $MISTRAL_API_KEY" \
     -d "$REQUEST_BODY")
-
 
 # Affichage du résultat
 clean_text=$(echo "$response" | jq -r '.outputs[0].content[0].text')
