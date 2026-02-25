@@ -68,8 +68,8 @@ response=$(curl -s --location "$API_URL" \
 
 
 # Affichage du résultat
-clean_text=$(echo $response | jq .outputs[0].content | tr -d '"')
-clean_conv=$(echo $response | jq .conversation_id )
+clean_text=$(echo "$response" | jq -r '.outputs[0].content[0].text')
+clean_conv=$(echo "$response" | jq -r '.conversation_id')
 
 jq_answer=$(jq -n \
         --arg reponse "$clean_text" \
