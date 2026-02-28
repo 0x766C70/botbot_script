@@ -53,20 +53,13 @@ Pass the returned `conv` value as the fourth argument to continue the same conve
 
 ## Configuration
 
-The script reads your Mistral AI API key from the `MISTRAL_API_KEY` environment variable. Set it before running the script:
+The script reads your Mistral AI API key from the `MISTRAL_API_KEY` environment variable. Export it before running the script:
 
 ```bash
 export MISTRAL_API_KEY="your_api_key_here"
 ```
 
-To make this permanent, add the line above to your `~/.bashrc` (or `~/.bash_profile` / `~/.profile`) and reload it:
-
-```bash
-echo 'export MISTRAL_API_KEY="your_api_key_here"' >> ~/.bashrc
-source ~/.bashrc
-```
-
-The script will exit with an error if `MISTRAL_API_KEY` is not set.
+The script will exit with an error if the variable is not set.
 
 ## License
 
