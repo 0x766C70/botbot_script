@@ -60,7 +60,7 @@ response=$(curl -s --location "$API_URL" \
     -d "$REQUEST_BODY")
 
 # Affichage du résultat
-clean_text=$(echo "$response" | jq -r '.outputs[0].content[0].text')
+clean_text=$(echo "$response" | jq -r '.outputs[0].content')
 clean_conv=$(echo "$response" | jq -r '.conversation_id')
 
 jq_answer=$(jq -n \
